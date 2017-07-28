@@ -37,6 +37,21 @@ function createElement (node) {
   // return document.createElement(node.type)
 }
 
+/*
+  function to handle diffing between old and new virtual DOM tree
+  and update of DOM  
+*/
+  function updateElement($patent, newNode, oldNode) {
+    /*
+      if the newNode is completely new, there is no old node
+    */
+    if (!oldNode) {
+      $patent.appendChild(createElement(newNode))
+    }
+
+    
+  }
+
 const a = (
   <ul class="list">
     <li>item 1</li>
