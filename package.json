@@ -1,0 +1,27 @@
+{
+  "name": "virtual-dom",
+  "version": "1.0.0",
+  "description": "A simple implementation of a virtual DOM",
+  "main": "virtual-dom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LookRain/virtual-dom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LookRain/virtual-dom/issues"
+  },
+  "homepage": "https://github.com/LookRain/virtual-dom#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0"
+  },
+  "dependencies": {
+    "has-jsx-pragma": "^1.0.0"
+  }
+}
