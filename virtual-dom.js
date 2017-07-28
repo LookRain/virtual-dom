@@ -30,6 +30,7 @@ function createElement (node) {
   }
 
   const $el = document.createElement(node.type)
+  
   node.children.map(createElement).forEach($el.appendChild.bind($el))
   return $el
 
@@ -43,4 +44,6 @@ const a = (
   </ul>
 );
 
-console.log(a);
+const $root = document.getElementById('root');
+$root.appendChild(createElement(a));
+console.log($root);

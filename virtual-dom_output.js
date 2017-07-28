@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /** @jsx h */
 
@@ -9,35 +9,28 @@
   { type: ‘li’, props: {}, children: [‘item 2’] }
 	] }
 
-*/
-function h(type, props) {
-	for (var _len = arguments.length, children = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-		children[_key - 2] = arguments[_key];
-	}
+*/function h(type, props) {
+  for (var _len = arguments.length, children = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+    children[_key - 2] = arguments[_key];
+  }
 
-	return { type: type, props: props, children: children };
+  return { type: type, props: props, children: children };
 }
-/*
-	Using this helper function we can write DOM tree representation like this:
-	h('ul', {'class': 'list'},
-		h('li', {}, 'item 1'),
-		h('li', {}, 'item 2')
-	)
-*/
+
+function createElement(node) {
+  if (typeof node === 'string') {
+    return document.createTextNode(node);
+  }
+  var $el = document.createElement(node.type);
+  node.children.map(createElement).forEach($el.appendChild.bind($el));
+  return $el;
+}
 
 var a = h(
-	"ul",
-	{ "class": "list" },
-	h(
-		"li",
-		null,
-		"item 1"
-	),
-	h(
-		"li",
-		null,
-		"item 2"
-	)
+  'h1',
+  { 'class': 'list' },
+  '123'
 );
 
-console.log(a);
+var $root = document.getElementById('root');
+$root.appendChild(createElement(a));
