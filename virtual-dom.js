@@ -20,8 +20,20 @@ function h (type, props, ...children) {
 */
 
 
-function createElement (node) {
+/*
+  function to create a real DOM node
+*/
 
+function createElement (node) {
+  if (typeof node === 'string') {
+    return document.createTextNode(node)
+  }
+
+  const $el = document.createElement(node.type)
+  node.children.map(createElement).forEach($el.appendChild.bind($el))
+  return $el
+
+  // return document.createElement(node.type)
 }
 
 const a = (
