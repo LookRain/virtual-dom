@@ -8,7 +8,7 @@
 	] }
 
 */
-function h(type, props, ...children) {
+function h (type, props, ...children) {
 	return { type, props, children }
 }
 /*
@@ -18,6 +18,11 @@ function h(type, props, ...children) {
 		h('li', {}, 'item 2')
 	)
 */
+
+
+function createElement (node) {
+
+}
 
 const a = (
   <ul class="list">
